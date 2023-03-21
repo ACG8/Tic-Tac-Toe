@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw7iggkyhxsrk"]
+
+[ext_resource type="Script" path="res://box.gd" id="1_p33fy"]
+
+[node name="Box" type="TextureRect"]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 4
+script = ExtResource("1_p33fy")

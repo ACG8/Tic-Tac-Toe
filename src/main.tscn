@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://d7w1jco2nr7d"]
+
+[ext_resource type="Texture2D" uid="uid://c4xl03ba0ppr5" path="res://assets/grid.png" id="1_3nm76"]
+[ext_resource type="Texture2D" uid="uid://ctomcpkerjgxu" path="res://assets/x_sprite.tres" id="1_e864o"]
+[ext_resource type="Script" path="res://source.gd" id="2_i2yyt"]
+[ext_resource type="PackedScene" uid="uid://dw7iggkyhxsrk" path="res://box.tscn" id="2_thdgh"]
+[ext_resource type="Script" path="res://board.gd" id="3_olixx"]
+[ext_resource type="Texture2D" uid="uid://ctelxpais172w" path="res://assets/o_sprite.tres" id="5_ihgcb"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Left" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="XSource" type="TextureRect" parent="HBoxContainer/Left"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("1_e864o")
+script = ExtResource("2_i2yyt")
+drag_data = "X"
+
+[node name="Board" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_olixx")
+
+[node name="Grid" type="TextureRect" parent="HBoxContainer/Board"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+texture = ExtResource("1_3nm76")
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/Board/Grid"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="Box" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+
+[node name="Box2" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(1, 0)
+
+[node name="Box3" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(2, 0)
+
+[node name="Box4" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(0, 1)
+
+[node name="Box5" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(1, 1)
+
+[node name="Box6" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(2, 1)
+
+[node name="Box7" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(0, 2)
+
+[node name="Box8" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(1, 2)
+
+[node name="Box9" parent="HBoxContainer/Board/Grid/GridContainer" instance=ExtResource("2_thdgh")]
+layout_mode = 2
+location = Vector2(2, 2)
+
+[node name="Status" type="Label" parent="HBoxContainer/Board/Grid"]
+layout_mode = 2
+offset_left = 85.0
+offset_top = 352.0
+offset_right = 214.0
+offset_bottom = 378.0
+text = "GAME ONGOING"
+
+[node name="Right" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="OSource" type="TextureRect" parent="HBoxContainer/Right"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("5_ihgcb")
+script = ExtResource("2_i2yyt")
+drag_data = "O"
