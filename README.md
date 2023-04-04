@@ -1,5 +1,5 @@
 # Tic-Tac-Toe
-A tutorial implementation of Tic-Tac-Toe, verified with GdUnit4
+A tutorial implementation of Tic-Tac-Toe, verified with GdUnit4 (https://github.com/MikeSchulze/gdUnit4)
 
 This repository contains content from the following series of 3 tutorial videos:
 
